@@ -5,6 +5,7 @@ pipeline {
     environment {
         PUBLIC_PATH = '/kana/'
     }
+
     stages {
 
         stage('Build') {
