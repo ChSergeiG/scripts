@@ -5,7 +5,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '5'))
     }
     triggers {
-        cron('*/10 * * * 5')
+        cron('*/10 4-9 * * 5 \n */5 10-19 * * 5 \n */10 20-23 * * 5')
     }
     environment {
         ZZ_USER_NAME = credentials('Autozzap_login')
