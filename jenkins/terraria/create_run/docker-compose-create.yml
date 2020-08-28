@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  terraria:
+    image: ryshe/terraria:latest
+    container_name: terraria
+    command: ''
+    volumes:
+      - $HOME/terraria/world:/root/.local/share/Terraria/Worlds
+    ports:
+      - '7777:7777'
