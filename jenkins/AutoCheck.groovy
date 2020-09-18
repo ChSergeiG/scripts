@@ -28,11 +28,20 @@ pipeline {
             steps {
                 sh './gradlew test'
             }
+            post {
+                success {
+                    script {
+                        currentBuild.setKeepLog(true)
+                    }
+                }
+            }
         }
     }
     post {
         always {
             sh 'make -sC docker destroy'
+        }
+        failure {
             junit 'build/test-results/test/*.xml'
         }
     }
